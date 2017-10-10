@@ -1,14 +1,27 @@
 import {Template} from 'meteor/templating';
-
-import {Tareas} from '../api/tareas.js';
-
+import {Tareas} from '../api/tareas.js'; // colección en MongoDB
 import './body.html';
 
 Template.body.helpers({
-  tareas () {
+  tareas () { // conectar con MongoDB
     return Tareas.find({});
   }
-  // Para que surja la magia,insertamos por consola los datos a nuestra BD de Mongo:
-  // $ meteor mongo
-  // $ db.tareas.insert({ texto: "Hola mundo!", fechaCreado: new Date() });
+});
+
+Template.body.events({
+  'submit .nueva-tarea'(evento) {
+    evento.preventDefault(); //evitamos el comportamiento de refrescar la página que tiene el form por defecto
+
+    // recogemos los datos del formulario
+    const ele = evento.target;
+    const texto = ele.texto.value;
+    
+    // la misma inserción que hicimos antes desde consola, ahora lo hacemos mediante formulario
+    Tareas.insert({
+      texto: texto
+      ,fechaCreado: new Date()
+    });
+
+    ele.texto.value = ''; // borrar formulario
+  }
 });
