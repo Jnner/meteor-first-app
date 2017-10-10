@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Lista de cosas pendientes</h1>
+    </header>
+ 
+    <ul>
+      {{#each tareas}}
+        {{> tarea}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
+<template name="tarea">
+  <li>{{texto}}</li>
+</template>
