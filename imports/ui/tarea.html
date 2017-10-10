@@ -1,0 +1,10 @@
+<template name="tarea">
+  <!--el efecto de tachado se hace mediante añadir o quitar la clase checked-->
+  <li class="{{#if checked}}checked{{/if}}"> 
+    <button class="borrar">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{texto}}</span>
+  </li>
+</template>

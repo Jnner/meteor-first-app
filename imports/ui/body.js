@@ -1,5 +1,6 @@
 import {Template} from 'meteor/templating';
 import {Tareas} from '../api/tareas.js'; // colección en MongoDB
+import './tarea.js';
 import './body.html';
 
 Template.body.helpers({
