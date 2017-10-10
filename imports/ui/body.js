@@ -4,7 +4,10 @@ import './body.html';
 
 Template.body.helpers({
   tareas () { // conectar con MongoDB
-    return Tareas.find({});
+    return Tareas.find(
+      {}
+      ,{ sort: { fechaCreado: -1 } }
+    );
   }
 });
 
