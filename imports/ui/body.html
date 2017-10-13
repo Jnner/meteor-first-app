@@ -1,7 +1,10 @@
 <body>
   <div class="container">
     <header>
-      <h1>Lista de cosas pendientes</h1>
+      <h1>Lista de cosas pendientes ({{contarIncompletos}})</h1>
+      <label class="ocultar-completado">
+        <input type="checkbox" /> Ocultar tareas completadas
+      </label>
       <form class="nueva-tarea">
         <input type="text" name="texto" placeholder="Añade una nueva tarea" />
       </form>
