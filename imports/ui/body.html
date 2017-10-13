@@ -5,9 +5,13 @@
       <label class="ocultar-completado">
         <input type="checkbox" /> Ocultar tareas completadas
       </label>
+      {{> loginButtons}} <!--variable interna de meteor/accounts-base-->
+
+      {{#if currentUser}} <!--variable interna de meteor/accounts-base-->
       <form class="nueva-tarea">
         <input type="text" name="texto" placeholder="Añade una nueva tarea" />
       </form>
+      {{/if}}
     </header>
  
     <ul>

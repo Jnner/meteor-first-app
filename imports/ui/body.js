@@ -1,3 +1,4 @@
+import {Meteor} from 'meteor/meteor';
 import {Template} from 'meteor/templating';
 import {ReactiveDict} from 'meteor/reactive-dict'; // para que este paquete de Meteor funcione debemos escribir en la consola:$ meteor add reactive-dict
 import {Tareas} from '../api/tareas.js'; // colección en MongoDB
@@ -40,6 +41,8 @@ Template.body.events({
     Tareas.insert({
       texto: texto
       ,fechaCreado: new Date()
+      ,propietario: Meteor.userId() // ID interno que genera MongoDB al generar un dato
+      ,usuario: Meteor.user().usuario
     });
 
     ele.texto.value = ''; // borrar formulario
