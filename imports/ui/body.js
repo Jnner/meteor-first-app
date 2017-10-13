@@ -38,12 +38,7 @@ Template.body.events({
     const texto = ele.texto.value;
     
     // insertamos los nuevos datos a la colección en MongoDB
-    Tareas.insert({
-      texto: texto
-      ,fechaCreado: new Date()
-      ,propietario: Meteor.userId() // ID interno que genera MongoDB al generar un dato
-      ,usuario: Meteor.user().usuario
-    });
+    Meteor.call('tareas.insert', texto);
 
     ele.texto.value = ''; // borrar formulario
   }
