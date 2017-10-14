@@ -1,4 +1,8 @@
 # Pasos realizados hasta ahora
+10] Añadimos pruebas unitarias en la API (se pueden añadir en cualquier parte de la app)
+- Añadimos el 'test driver' Mocha a Meteor: $ meteor add practicalmeteor:mocha
+- Para ejecutar nuestro entorno de Test, paramos la app y ejecutamos: $ meteor test --driver-package practicalmeteor:mocha
+
 9] Añadimos opción de hacer pública/privada las tareas creadas por cada usuario. Mediante 'publish' y 'subscribe' controlamos qué datos manda Meteor a la BDD del lado del cliente.
 - Para inhabilitar el 'autopublish package' que viene por defecto: $ meteor remove autopublish
 - Añadimos seguridad extra en la API para asegurarnos que un usuario no puede borrar o finalizar tareas si el usuario propietario la ha asignado como privada.
