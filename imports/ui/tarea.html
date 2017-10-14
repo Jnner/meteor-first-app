@@ -1,20 +1,18 @@
 <template name="tarea">
   <!--el efecto de tachado se hace mediante añadir o quitar la clase checked-->
-  <li class="{{#if checked}}checked{{/if}} {{#if privado}}privado{{/if}}"> 
-    <button class="borrar">&times;</button>
- 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+  <li class="{{#if checked}}checked{{/if}} {{#if privado}}privado{{/if}}">
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" id="{{_id}}"/>
+    <label class="texto" for="{{_id}}">{{texto}}</label>
 
     {{#if esPropietario}}
-    <button class="alternar-privado">
-      {{#if private}}
+    <button class="borrar">&times;</button>
+    <button class="btn-publicar {{#if privado}}privado{{else}}publico{{/if}}">
+      {{#if privado}}
         Privado
       {{else}}
         Público
       {{/if}}
     </button>
     {{/if}}
- 
-    <span class="texto"><strong>{{usuario}}</strong>{{texto}}</span>
   </li>
 </template>

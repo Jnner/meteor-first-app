@@ -35,7 +35,7 @@ Meteor.methods({
     check(idTarea, String);
 
     const tarea = Tareas.findOne(idTarea);
-    if (tarea.privado && tarea.propietario !== Meteor.userId()) {
+    if (!tarea.privado && tarea.propietario !== Meteor.userId()) {
       // si la tarea es privada, nos aseguramos que solamente el propietario puede borrarla
       throw new Meteor.Error('not-authorized');
     } 

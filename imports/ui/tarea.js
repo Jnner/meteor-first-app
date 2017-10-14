@@ -16,7 +16,7 @@ Template.tarea.events({
   ,'click .borrar'() {
     Meteor.call('tareas.remove', this._id);
   }
-  ,'click .alternar-privado'() {
+  ,'click .btn-publicar'() {
     Meteor.call('tareas.setPrivate', this._id, !this.privado);
   }
 });
