@@ -2,35 +2,31 @@
 import {Meteor} from 'meteor/meteor';
 import {Random} from 'meteor/random';
 import {assert} from 'meteor/practicalmeteor:chai';
-import {Tareas} from './tareas.js';
+import {Tasks} from './task.js';
  
 if (Meteor.isServer) {
-  describe('Tareas', () => {
+  describe('Tasks', () => {
     describe('methods', () => {
       const userId = Random.id();
       let idTarea;
  
       beforeEach(() => {
-        Tareas.remove({});
+        Tasks.remove({});
         idTarea = Tareas.insert({
-          texto: 'test task'
+          text: 'test task'
           ,fechaCreado: new Date()
           ,propietario: userId
           ,usuario: 'tmeasday'
         });
       });
 
-      it('puede borrar tareas propias', () => {
-        // encontrar la implementación interna del método tarea de manera que podamos aislarla para probarla
-        const borrarTarea = Meteor.server.method_handlers['tareas.remove'];
+      it('puede borrar task propias', () => {
+        const borrarTarea = Meteor.server.method_handlers['task.remove'];
  
-        // configurar una llamada falsa al método que se parezca a lo que el método espera
         const invocation = { userId };
  
-        // ejecurar el método con 'this' establece la llamada falsa
         borrarTarea.apply(invocation, [idTarea]);
  
-        // verifica que el método hace lo que esperamos
         assert.equal(Tareas.find().count(), 0);
       });
     });

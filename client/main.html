@@ -1,3 +1,44 @@
 <head>
-  <title>Meteor App</title>
+  <title>Meteor App | Defining views with templates</title>
 </head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List ({{countIncompletes}})</h1>
+      <div class="login-section">
+        <div class="ocultar-completado">
+          <input type="checkbox" id="ocultarCompleto" /> <label for="ocultarCompleto">Hide incomplete tasks</label>
+        </div>
+        {{> loginButtons}}
+      </div>
+
+      <form class="nueva-task">
+        <input type="text" name="text" placeholder="Add a task" />
+      </form>
+    </header>
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" id="{{_id}}"/>
+    <label class="text" for="{{_id}}">{{text}}</label>
+
+    <button class="borrar">&times;</button>
+    <button class="btn-publicar {{#if private}}private{{else}}public{{/if}}">
+      {{#if private}}
+        Private
+      {{else}}
+        Public
+      {{/if}}
+    </button>
+  </li>
+</template>

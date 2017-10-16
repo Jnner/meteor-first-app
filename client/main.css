@@ -78,7 +78,7 @@ form {
   position: relative;
 }
  
-.nueva-tarea input {
+.nueva-task input {
   width: 100%;
   padding: 10px 80px 0 0;
   box-sizing: border-box;
@@ -88,7 +88,7 @@ form {
   background: transparent;
 }
  
-.nueva-tarea input:focus{
+.nueva-task input:focus{
   outline: 0;
 }
  
@@ -115,7 +115,7 @@ li {
   border-bottom: lightgrey solid 1px;
 }
  
-li .texto {
+li .text {
   cursor: pointer;
   margin-left: 10px;
 }
@@ -124,11 +124,11 @@ li.checked {
   color: #888;
 }
  
-li.checked .texto {
+li.checked .text {
   text-decoration: line-through;
 }
  
-.btn-publicar.privado {
+.btn-publicar.private {
   float: right;
   cursor: pointer;
   margin: 0 5px 0 5px;
@@ -137,7 +137,7 @@ li.checked .texto {
   background-color: #F9FE96;
   border-radius: 3px;
 }
-.btn-publicar.publico {
+.btn-publicar.public {
   float: right;
   cursor: pointer;
   margin: 0 5px 0 5px;
@@ -157,7 +157,7 @@ li.checked .texto {
     clear: both;
   }
  
-  .nueva-tarea input {
+  .nueva-task input {
     padding-bottom: 5px;
   }
 }
