@@ -20,25 +20,21 @@
  
     <ul>
       {{#each tasks}}
-        {{> task}}
+      <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked" id="{{_id}}"/>
+        <label class="text" for="{{_id}}">{{text}}</label>
+
+        <button class="borrar">&times;</button>
+        <button class="btn-publicar {{#if private}}private{{else}}public{{/if}}">
+          {{#if private}}
+            Private
+          {{else}}
+            Public
+          {{/if}}
+        </button>
+      </li>
       {{/each}}
     </ul>
 
   </div>
 </body>
-
-<template name="task">
-  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" id="{{_id}}"/>
-    <label class="text" for="{{_id}}">{{text}}</label>
-
-    <button class="borrar">&times;</button>
-    <button class="btn-publicar {{#if private}}private{{else}}public{{/if}}">
-      {{#if private}}
-        Private
-      {{else}}
-        Public
-      {{/if}}
-    </button>
-  </li>
-</template>
