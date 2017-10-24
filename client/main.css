@@ -59,7 +59,7 @@ input[type=checkbox] {
   padding-bottom: 15px;
 }
 
-header .ocultar-completado label {
+header .hide-complete label {
   cursor: pointer;
 }
  
@@ -78,7 +78,7 @@ form {
   position: relative;
 }
  
-.nueva-task input {
+.new-task input {
   width: 100%;
   padding: 10px 80px 0 0;
   box-sizing: border-box;
@@ -88,7 +88,7 @@ form {
   background: transparent;
 }
  
-.nueva-task input:focus{
+.new-task input:focus{
   outline: 0;
 }
  
@@ -98,7 +98,7 @@ ul {
   background: #d2edf4;
 }
  
-.borrar {
+.delete {
   cursor: pointer;
   float: right;
   font-weight: bold;
@@ -128,7 +128,7 @@ li.checked .text {
   text-decoration: line-through;
 }
  
-.btn-publicar.private {
+.btn-publish.private {
   float: right;
   cursor: pointer;
   margin: 0 5px 0 5px;
@@ -137,7 +137,7 @@ li.checked .text {
   background-color: #F9FE96;
   border-radius: 3px;
 }
-.btn-publicar.public {
+.btn-publish.public {
   float: right;
   cursor: pointer;
   margin: 0 5px 0 5px;
@@ -157,7 +157,7 @@ li.checked .text {
     clear: both;
   }
  
-  .nueva-task input {
+  .new-task input {
     padding-bottom: 5px;
   }
 }

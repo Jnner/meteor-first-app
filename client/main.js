@@ -28,7 +28,7 @@ Template.body.helpers({
 });
 
 Template.body.events({
-  'submit .nueva-task'(evento) {
+  'submit .new-task'(evento) {
     evento.preventDefault();
 
     const ele = evento.target;
@@ -38,16 +38,16 @@ Template.body.events({
 
     ele.text.value = '';
   }
-  ,'change .ocultar-completado input'(evento, instancia) {
+  ,'change .hide-complete input'(evento, instancia) {
     instancia.state.set('ocultarCompletos', evento.target.checked);
   }
   ,'click .toggle-checked'() {
     Meteor.call('tasks.setChecked', this._id, !this.checked);
   }
-  ,'click .borrar'() {
+  ,'click .delete'() {
     Meteor.call('tasks.remove', this._id);
   }
-  ,'click .btn-publicar'() {
+  ,'click .btn-publish'() {
     Meteor.call('tasks.setPrivate', this._id, !this.private);
   }
 });

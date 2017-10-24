@@ -7,13 +7,13 @@
     <header>
       <h1>Todo List ({{countIncompletes}})</h1>
       <div class="login-section">
-        <div class="ocultar-completado">
+        <div class="hide-complete">
           <input type="checkbox" id="ocultarCompleto" /> <label for="ocultarCompleto">Hide incomplete tasks</label>
         </div>
         {{> loginButtons}}
       </div>
 
-      <form class="nueva-task">
+      <form class="new-task">
         <input type="text" name="text" placeholder="Add a task" />
       </form>
     </header>
@@ -24,8 +24,8 @@
         <input type="checkbox" checked="{{checked}}" class="toggle-checked" id="{{_id}}"/>
         <label class="text" for="{{_id}}">{{text}}</label>
 
-        <button class="borrar">&times;</button>
-        <button class="btn-publicar {{#if private}}private{{else}}public{{/if}}">
+        <button class="delete">&times;</button>
+        <button class="btn-publish {{#if private}}private{{else}}public{{/if}}">
           {{#if private}}
             Private
           {{else}}
