@@ -1,3 +1,6 @@
+# Para arrancar el proyecto
+$ npm install meteor
+$ npm run start
 # Modificando algunas cosas
 11. Modificamos un poco los estilos de la app
 12. Ocultamos botones borrar cuando el usuario no es el propietario de la tarea
